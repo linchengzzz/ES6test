@@ -27,4 +27,4 @@ function tag(strs) {
     strs[0] === undefined
     strs.raw[0] === "\\unicode and \\u{55}";
 }
-tag`\unicode and \u{55}`
+// tag`\unicode and \u{55}`

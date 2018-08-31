@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" id="inputBox">
+    <script>
+        var inputBox = document.getElementById("inputBox");
+        inputBox.addEventListener("change", function () {
+            const getNum = numbers(inputBox);
+            console.log(getNum.next());
+        })
+        function* numbers(content) {
+            console.log(content.files[0]);
+            let file = new FileReader().readAsDataURL(content.files[0]);
+            console.log(file);
+            try {
+                while (!file.eof) {
+                    yield parseInt(file.readLine(), 10);
+                }
+            } finally {
+                // file.close();
+            }
+        }
+        // const var_unit_update = 1;
+        // console.log(var_unit_setup);
+        
+    </script>
+</body>
+
+</html>
